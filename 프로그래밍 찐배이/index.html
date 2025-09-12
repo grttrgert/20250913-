@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>5호선 전광판 스타일</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;600;800&display=swap" rel="stylesheet">
+  <!-- CSS 파일명은 사용 중인 파일명에 맞춰 유지 -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- 전광판 본문 -->
+  <section class="sign">
+    <!-- 실시간 도착정보 -->
+    <div class="realtime-info">
+      <div class="station-header">
+        <h1 class="current-station">공덕역</h1>
+        <div class="line-badge">5호선</div>
+      </div>
+      
+      <div class="arrival-info">
+        <div class="row">
+          <h2 class="label-cyanblue">이번열차 방화행</h2>
+          <p class="eta" id="next-train-1">3분 후 도착</p>
+        </div>
+
+        <div class="row">
+          <h2 class="label-gray">다음열차 방화행</h2>
+          <p class="eta" id="next-train-2">9분 후 도착</p>
+        </div>
+
+        <div class="row">
+          <h2 class="label-gray">3번째열차 방화행</h2>
+          <p class="eta" id="next-train-3">16분 후 도착</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 하단 5호선 라인 -->
+    <div class="line-map">
+      <div class="line-info">
+        <div class="line-number">5</div>
+        <span class="line-name">5호선</span>
+      </div>
+      <div class="stations">
+        <div class="station" data-station="방화"><span>방화</span></div>
+        <div class="station" data-station="개화산"><span>개화산</span></div>
+        <div class="station" data-station="김포공항"><span>김포공항</span></div>
+        <div class="station" data-station="송정"><span>송정</span></div>
+        <div class="station" data-station="마곡"><span>마곡</span></div>
+        <div class="station" data-station="발산"><span>발산</span></div>
+        <div class="station" data-station="우장산"><span>우장산</span></div>
+        <div class="station" data-station="화곡"><span>화곡</span></div>
+        <div class="station" data-station="까치산"><span>까치산</span></div>
+        <div class="station" data-station="신정"><span>신정</span></div>
+        <div class="station" data-station="목동"><span>목동</span></div>
+        <div class="station" data-station="오목교"><span>오목교</span></div>
+        <div class="station" data-station="양평"><span>양평</span></div>
+        <div class="station" data-station="영등포구청"><span>영등포구청</span></div>
+        <div class="station" data-station="영등포시장"><span>영등포시장</span></div>
+        <div class="station" data-station="신길"><span>신길</span></div>
+        <div class="station" data-station="여의도"><span>여의도</span></div>
+        <div class="station" data-station="여의나루"><span>여의나루</span></div>
+        <div class="station" data-station="마포"><span>마포</span></div>
+        <div class="station" data-station="공덕"><span>공덕</span></div>
+        <div class="station" data-station="애오개"><span>애오개</span></div>
+        <div class="station" data-station="충정로"><span>충정로</span></div>
+        <div class="station" data-station="서대문"><span>서대문</span></div>
+        <div class="station" data-station="광화문"><span>광화문</span></div>
+        <div class="station" data-station="종로3가"><span>종로3가</span></div>
+        <div class="station" data-station="을지로4가"><span>을지로4가</span></div>
+        <div class="station" data-station="동대문운동장"><span>동대문운동장</span></div>
+        <div class="station" data-station="청구"><span>청구</span></div>
+        <div class="station" data-station="신금호"><span>신금호</span></div>
+        <div class="station" data-station="행당"><span>행당</span></div>
+        <div class="station" data-station="왕십리"><span>왕십리</span></div>
+        <div class="station" data-station="마장"><span>마장</span></div>
+        <div class="station" data-station="답십리"><span>답십리</span></div>
+        <div class="station" data-station="장한평"><span>장한평</span></div>
+        <div class="station" data-station="군자"><span>군자</span></div>
+        <div class="station" data-station="아차산"><span>아차산</span></div>
+        <div class="station" data-station="광나루"><span>광나루</span></div>
+        <div class="station" data-station="천호"><span>천호</span></div>
+        <div class="station" data-station="강동"><span>강동</span></div>
+        <div class="station" data-station="길동"><span>길동</span></div>
+        <div class="station" data-station="굽은다리"><span>굽은다리</span></div>
+        <div class="station" data-station="명일"><span>명일</span></div>
+        <div class="station" data-station="고덕"><span>고덕</span></div>
+        <div class="station" data-station="상일동"><span>상일동</span></div>
+        <div class="station" data-station="강일"><span>강일</span></div>
+        <div class="station" data-station="미사"><span>미사</span></div>
+        <div class="station" data-station="하남풍산"><span>하남풍산</span></div>
+        <div class="station" data-station="하남시청"><span>하남시청</span></div>
+        <div class="station" data-station="하남검단산"><span>하남검단산</span></div>
+        <div class="station">
+          <img id="train-icon" src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDgiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCA0OCAzMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjQ4IiBoZWlnaHQ9IjMyIiByeD0iNiIgZmlsbD0idXJsKCN0cmFpbkdyYWQpIiBzdHJva2U9IiMzMzMiIHN0cm9rZS13aWR0aD0iMiIvPgo8cmVjdCB4PSI0IiB5PSIxMCIgd2lkdGg9IjQwIiBoZWlnaHQ9IjE0IiByeD0iMyIgZmlsbD0iIzMzMzMzMyIvPgo8cmVjdCB4PSI2IiB5PSIxMiIgd2lkdGg9IjM2IiBoZWlnaHQ9IjEwIiByeD0iMiIgZmlsbD0iIzQ0NDQ0NCIvPgo8cmVjdCB4PSI4IiB5PSIxNCIgd2lkdGg9IjMyIiBoZWlnaHQ9IjYiIHJ4PSIxIiBmaWxsPSIjNTU1NTU1Ii8+CjxyZWN0IHg9IjEwIiB5PSIxNiIgd2lkdGg9IjI4IiBoZWlnaHQ9IjIiIHJ4PSIxIiBmaWxsPSIjNjY2NjY2Ii8+CjxyZWN0IHg9IjEyIiB5PSIxOCIgd2lkdGg9IjI0IiBoZWlnaHQ9IjIiIHJ4PSIxIiBmaWxsPSIjNzc3Nzc3Ii8+CjxyZWN0IHg9IjE0IiB5PSIyMCIgd2lkdGg9IjIwIiBoZWlnaHQ9IjIiIHJ4PSIxIiBmaWxsPSIjODg4ODg4Ii8+CjxyZWN0IHg9IjE2IiB5PSIyMiIgd2lkdGg9IjE2IiBoZWlnaHQ9IjIiIHJ4PSIxIiBmaWxsPSIjOTk5OTk5Ii8+CjxyZWN0IHg9IjE4IiB5PSIyNCIgd2lkdGg9IjEyIiBoZWlnaHQ9IjIiIHJ4PSIxIiBmaWxsPSIjYWFhYWFhIi8+CjxyZWN0IHg9IjIwIiB5PSIyNiIgd2lkdGg9IjgiIGhlaWdodD0iMiIgcng9IjEiIGZpbGw9IiNiYmJiYmIiLz4KPGNpcmNsZSBjeD0iMTIiIGN5PSI4IiByPSIzIiBmaWxsPSIjMDBjMGZmIi8+CjxjaXJjbGUgY3g9IjIwIiBjeT0iOCIgcj0iMyIgZmlsbD0iIzAwYzBmZiIvPgo8Y2lyY2xlIGN4PSIyOCIgY3k9IjgiIHI9IjMiIGZpbGw9IiMwMGMwZmYiLz4KPGNpcmNsZSBjeD0iMzYiIGN5PSI4IiByPSIzIiBmaWxsPSIjMDBjMGZmIi8+CjxyZWN0IHg9IjEwIiB5PSI2IiB3aWR0aD0iMjgiIGhlaWdodD0iNCIgcng9IjIiIGZpbGw9IiMzMzMzMzMiLz4KPHJlY3QgeD0iMTIiIHk9IjgiIHdpZHRoPSIyNCIgaGVpZ2h0PSIyIiByeD0iMSIgZmlsbD0iIzQ0NDQ0NCIvPgo8cmVjdCB4PSIxNCIgeT0iMTAiIHdpZHRoPSIyMCIgaGVpZ2h0PSIyIiByeD0iMSIgZmlsbD0iIzU1NTU1NSIvPgo8cmVjdCB4PSIxNiIgeT0iMTIiIHdpZHRoPSIxNiIgaGVpZ2h0PSIyIiByeD0iMSIgZmlsbD0iIzY2NjY2NiIvPgo8cmVjdCB4PSIxOCIgeT0iMTQiIHdpZHRoPSIxMiIgaGVpZ2h0PSIyIiByeD0iMSIgZmlsbD0iIzc3Nzc3NyIvPgo8cmVjdCB4PSIyMCIgeT0iMTYiIHdpZHRoPSI4IiBoZWlnaHQ9IjIiIHJ4PSIxIiBmaWxsPSIjODg4ODg4Ii8+CjxyZWN0IHg9IjIyIiB5PSIxOCIgd2lkdGg9IjQiIGhlaWdodD0iMiIgcng9IjEiIGZpbGw9IiM5OTk5OTkiLz4KPHJlY3QgeD0iMjQiIHk9IjIwIiB3aWR0aD0iMiIgaGVpZ2h0PSIyIiByeD0iMSIgZmlsbD0iI2FhYWFhYSIvPgo8cmVjdCB4PSIyNiIgeT0iMjIiIHdpZHRoPSIyIiBoZWlnaHQ9IjIiIHJ4PSIxIiBmaWxsPSIjYmJiYmJiIi8+CjxyZWN0IHg9IjI4IiB5PSIyNCIgd2lkdGg9IjIiIGhlaWdodD0iMiIgcng9IjEiIGZpbGw9IiNjY2NjY2MiLz4KPHJlY3QgeD0iMzAiIHk9IjI2IiB3aWR0aD0iMiIgaGVpZ2h0PSIyIiByeD0iMSIgZmlsbD0iI2RkZGRkZCIvPgo8cmVjdCB4PSIzMiIgeT0iMjgiIHdpZHRoPSIyIiBoZWlnaHQ9IjIiIHJ4PSIxIiBmaWxsPSIjZWVlZWVlIi8+CjxyZWN0IHg9IjM0IiB5PSIzMCIgd2lkdGg9IjIiIGhlaWdodD0iMiIgcng9IjEiIGZpbGw9IiNmNWY1ZjUiLz4KPGRlZnM+CjxsaW5lYXJHcmFkaWVudCBpZD0idHJhaW5HcmFkIiB4MT0iMCUiIHkxPSIwJSIgeDI9IjEwMCUiIHkyPSIxMDAlIj4KPHN0b3Agb2Zmc2V0PSIwJSIgc3R5bGU9InN0b3AtY29sb3I6I2Y1ZjVmNTtzdG9wLW9wYWNpdHk6MSIgLz4KPHN0b3Agb2Zmc2V0PSIxMDAlIiBzdHlsZT0ic3RvcC1jb2xvcjojZTBlMGUwO3N0b3Atb3BhY2l0eToxIiAvPgo8L2xpbmVhckdyYWRpZW50Pgo8L2RlZnM+Cjwvc3ZnPg==" alt="지하철 열차" class="train-img">
+          <span>하남검단산</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- 오른쪽 상단 실시간 시계 (시:분) -->
+  <div class="clock" id="clock" aria-label="현재 시각"></div>
+
+
+  <!-- 시계 및 실시간 도착정보 스크립트 -->
+  <script>
+    // 시계 업데이트
+    function pad(n){ return n.toString().padStart(2, '0'); }
+    function updateClock(){
+      const now = new Date();
+      const hh = pad(now.getHours());
+      const mi = pad(now.getMinutes());
+      document.getElementById('clock').textContent = `${hh}:${mi}`;
+    }
+    updateClock();
+    setInterval(updateClock, 1000);
+
+    // 실제 API 사용을 위한 설정
+    const API_CONFIG = {
+      // 공공데이터포털에서 발급받은 인증키를 여기에 입력하세요
+      // 1. https://data.go.kr 접속
+      // 2. 회원가입 후 로그인
+      // 3. '서울특별시_지하철 실시간 도착정보' API 신청
+      // 4. 발급받은 인증키를 아래에 입력
+      API_KEY: '43746d706d69746f36397763466863',
+      // 서울시 지하철 실시간 도착정보 API URL
+      API_URL: 'http://swopenAPI.seoul.go.kr/api/subway/sample/json/realtimeStationArrival/0/5/',
+      // 공덕역 코드 (5호선)
+      STATION_CODE: '0527'
+    };
+
+    // 실시간 도착정보 시뮬레이션 (API 사용 전까지)
+    const stations = [
+      { name: "공덕역", arrivals: [3, 9, 16] },
+      { name: "애오개역", arrivals: [1, 7, 14] },
+      { name: "충정로역", arrivals: [2, 8, 15] },
+      { name: "서대문역", arrivals: [4, 10, 17] }
+    ];
+
+    // 5호선 모든 역의 도착 정보 데이터
+    const allStationData = {
+      "방화": { arrivals: [2, 8, 15] },
+      "개화산": { arrivals: [1, 6, 12] },
+      "김포공항": { arrivals: [3, 9, 16] },
+      "송정": { arrivals: [2, 7, 14] },
+      "마곡": { arrivals: [4, 10, 17] },
+      "발산": { arrivals: [1, 5, 11] },
+      "우장산": { arrivals: [3, 8, 15] },
+      "화곡": { arrivals: [2, 7, 13] },
+      "까치산": { arrivals: [4, 9, 16] },
+      "신정": { arrivals: [1, 6, 12] },
+      "목동": { arrivals: [3, 8, 14] },
+      "오목교": { arrivals: [2, 7, 13] },
+      "양평": { arrivals: [4, 10, 17] },
+      "영등포구청": { arrivals: [1, 5, 11] },
+      "영등포시장": { arrivals: [3, 8, 15] },
+      "신길": { arrivals: [2, 7, 13] },
+      "여의도": { arrivals: [4, 9, 16] },
+      "여의나루": { arrivals: [1, 6, 12] },
+      "마포": { arrivals: [3, 8, 14] },
+      "공덕": { arrivals: [2, 7, 13] },
+      "애오개": { arrivals: [4, 10, 17] },
+      "충정로": { arrivals: [1, 5, 11] },
+      "서대문": { arrivals: [3, 8, 15] },
+      "광화문": { arrivals: [2, 7, 13] },
+      "종로3가": { arrivals: [4, 9, 16] },
+      "을지로4가": { arrivals: [1, 6, 12] },
+      "동대문운동장": { arrivals: [3, 8, 14] },
+      "청구": { arrivals: [2, 7, 13] },
+      "신금호": { arrivals: [4, 10, 17] },
+      "행당": { arrivals: [1, 5, 11] },
+      "왕십리": { arrivals: [3, 8, 15] },
+      "마장": { arrivals: [2, 7, 13] },
+      "답십리": { arrivals: [4, 9, 16] },
+      "장한평": { arrivals: [1, 6, 12] },
+      "군자": { arrivals: [3, 8, 14] },
+      "아차산": { arrivals: [2, 7, 13] },
+      "광나루": { arrivals: [4, 10, 17] },
+      "천호": { arrivals: [1, 5, 11] },
+      "강동": { arrivals: [3, 8, 15] },
+      "길동": { arrivals: [2, 7, 13] },
+      "굽은다리": { arrivals: [4, 9, 16] },
+      "명일": { arrivals: [1, 6, 12] },
+      "고덕": { arrivals: [3, 8, 14] },
+      "상일동": { arrivals: [2, 7, 13] },
+      "강일": { arrivals: [4, 10, 17] },
+      "미사": { arrivals: [1, 5, 11] },
+      "하남풍산": { arrivals: [3, 8, 15] },
+      "하남시청": { arrivals: [2, 7, 13] },
+      "하남검단산": { arrivals: [4, 9, 16] }
+    };
+
+    let currentStationIndex = 0; // 공덕역이 첫 번째
+    let arrivalTimes = [3, 9, 16]; // 공덕역 초기 도착시간
+    let useRealAPI = true; // 실제 API 사용 여부
+
+    // 지하철 운행 시간 체크 (5호선: 05:30 ~ 24:00)
+    function isSubwayOperating() {
+      const now = new Date();
+      const hour = now.getHours();
+      const minute = now.getMinutes();
+      const currentTime = hour * 60 + minute;
+      
+      // 05:30 (330분) ~ 24:00 (1440분)
+      return currentTime >= 330 && currentTime <= 1440;
+    }
+
+    // 운행 종료 시 표시할 메시지
+    function displayServiceEnded() {
+      document.getElementById('next-train-1').textContent = '운행 종료';
+      document.getElementById('next-train-2').textContent = '운행 종료';
+      document.getElementById('next-train-3').textContent = '운행 종료';
+      
+      // 스타일 적용
+      document.querySelectorAll('.eta').forEach(element => {
+        element.style.color = '#888';
+        element.style.fontWeight = '400';
+      });
+    }
+
+    // 실제 API에서 데이터 가져오기
+    async function fetchRealTimeData() {
+      // 운행 시간이 아니면 API 호출하지 않음
+      if (!isSubwayOperating()) {
+        displayServiceEnded();
+        return null;
+      }
+
+      try {
+        // 서울시 지하철 API 올바른 URL 형식
+        const apiUrl = `http://swopenAPI.seoul.go.kr/api/subway/sample/json/realtimeStationArrival/0/5/${API_CONFIG.API_KEY}/${API_CONFIG.STATION_CODE}`;
+        console.log('API 호출 URL:', apiUrl);
+        
+        const response = await fetch(apiUrl, {
+          method: 'GET',
+          headers: {
+            'Content-Type': 'application/json',
+          }
+        });
+        
+        console.log('API 응답 상태:', response.status);
+        
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        
+        const data = await response.json();
+        console.log('API 응답 데이터:', data);
+        return data.realtimeArrivalList || [];
+      } catch (error) {
+        console.error('API 호출 실패:', error);
+        console.log('시뮬레이션 모드로 전환합니다.');
+        return null;
+      }
+    }
+
+    // API 데이터를 화면에 표시
+    function displayRealTimeData(apiData) {
+      if (!apiData || apiData.length === 0) {
+        console.log('API 데이터가 없습니다. 시뮬레이션 모드로 전환합니다.');
+        updateArrivalTimes();
+        return;
+      }
+
+      // 방화행(상행) 열차만 필터링
+      const upTrains = apiData.filter(train => 
+        train.updnLine === '상행' || train.updnLine === '0'
+      ).slice(0, 3);
+
+      upTrains.forEach((train, index) => {
+        const elementId = `next-train-${index + 1}`;
+        const element = document.getElementById(elementId);
+        
+        if (element) {
+          const arrivalTime = train.arvlMsg2 || train.arvlMsg3 || '정보없음';
+          element.textContent = arrivalTime;
+          
+          // 특별한 상황 표시
+          if (arrivalTime.includes('진입') || arrivalTime.includes('도착')) {
+            element.style.color = "#ff6b6b";
+            element.style.fontWeight = "800";
+          } else if (arrivalTime.includes('지연')) {
+            element.style.color = "#ffa500";
+            element.style.fontWeight = "700";
+          } else {
+            element.style.color = index === 0 ? "var(--sign-blue)" : "var(--sign-cyan)";
+            element.style.fontWeight = "700";
+          }
+        }
+      });
+    }
+
+    // 시뮬레이션 모드 업데이트
+    function updateArrivalTimes() {
+      // 운행 시간이 아니면 운행 종료 메시지 표시
+      if (!isSubwayOperating()) {
+        displayServiceEnded();
+        return;
+      }
+
+      // 도착시간을 1분씩 감소
+      arrivalTimes = arrivalTimes.map(time => {
+        if (time <= 1) {
+          // 도착한 열차는 새로운 시간으로 교체 (5-20분 사이)
+          return Math.floor(Math.random() * 16) + 5;
+        }
+        return time - 1;
+      });
+
+      // DOM 업데이트
+      document.getElementById('next-train-1').textContent = `${arrivalTimes[0]}분 후 도착`;
+      document.getElementById('next-train-2').textContent = `${arrivalTimes[1]}분 후 도착`;
+      document.getElementById('next-train-3').textContent = `${arrivalTimes[2]}분 후 도착`;
+
+      // 특별한 상황 표시
+      if (arrivalTimes[0] <= 1) {
+        document.getElementById('next-train-1').textContent = "곧 도착";
+        document.getElementById('next-train-1').style.color = "#ff6b6b";
+        document.getElementById('next-train-1').style.fontWeight = "800";
+      } else {
+        document.getElementById('next-train-1').style.color = "var(--sign-blue)";
+        document.getElementById('next-train-1').style.fontWeight = "700";
+      }
+    }
+
+    // 통합 업데이트 함수
+    async function updateDisplay() {
+      if (useRealAPI && API_CONFIG.API_KEY !== 'YOUR_API_KEY_HERE') {
+        const apiData = await fetchRealTimeData();
+        displayRealTimeData(apiData);
+      } else {
+        updateArrivalTimes();
+      }
+    }
+
+    // 역 변경 시뮬레이션 (30초마다)
+    function changeStation() {
+      currentStationIndex = (currentStationIndex + 1) % stations.length;
+      const station = stations[currentStationIndex];
+      
+      document.querySelector('.current-station').textContent = station.name;
+      arrivalTimes = [...station.arrivals];
+      
+      // 도착정보 업데이트
+      updateArrivalTimes();
+    }
+
+    // 초기 실행
+    updateDisplay();
+    
+    // 30초마다 도착시간 업데이트 (실제 API 사용시 더 자주 업데이트)
+    setInterval(updateDisplay, 30000);
+    
+    // 30초마다 역 변경 (선택사항)
+    // setInterval(changeStation, 30000);
+
+    // 지연/운행중단 시뮬레이션 (가끔 발생)
+    function simulateDelay() {
+      if (Math.random() < 0.1) { // 10% 확률
+        const delayMinutes = Math.floor(Math.random() * 5) + 2; // 2-6분 지연
+        arrivalTimes[0] += delayMinutes;
+        document.getElementById('next-train-1').textContent = `${arrivalTimes[0]}분 후 도착 (지연)`;
+        document.getElementById('next-train-1').style.color = "#ffa500";
+      }
+    }
+
+    // 5분마다 지연 시뮬레이션 체크
+    setInterval(simulateDelay, 300000);
+
+    // 열차 위치 및 애니메이션 관리
+    const trainIcon = document.getElementById('train-icon');
+    const stationElements = document.querySelectorAll('.station');
+    let currentTrainPosition = 48; // 하남검단산역이 마지막 (인덱스 48)
+    let isTrainMoving = false;
+
+    // 열차 위치 업데이트 함수
+    function updateTrainPosition() {
+      const nextArrival = arrivalTimes[0]; // 다음 도착시간
+      
+      // 도착시간에 따른 열차 위치 계산 (5호선 전체 노선 기준)
+      let targetPosition;
+      if (nextArrival <= 1) {
+        // 1분 이하면 공덕역에 도착 (인덱스 19)
+        targetPosition = 19;
+        trainIcon.className = 'train-img at-station';
+        isTrainMoving = false;
+      } else if (nextArrival <= 3) {
+        // 3분 이하면 애오개역 근처 (접근 중, 인덱스 20)
+        targetPosition = 20;
+        trainIcon.className = 'train-img approaching';
+        isTrainMoving = true;
+      } else if (nextArrival <= 6) {
+        // 6분 이하면 충정로역 근처 (인덱스 21)
+        targetPosition = 21;
+        trainIcon.className = 'train-img moving';
+        isTrainMoving = true;
+      } else if (nextArrival <= 10) {
+        // 10분 이하면 서대문역 근처 (인덱스 22)
+        targetPosition = 22;
+        trainIcon.className = 'train-img moving';
+        isTrainMoving = true;
+      } else if (nextArrival <= 15) {
+        // 15분 이하면 광화문역 근처 (인덱스 23)
+        targetPosition = 23;
+        trainIcon.className = 'train-img moving';
+        isTrainMoving = true;
+      } else if (nextArrival <= 20) {
+        // 20분 이하면 종로3가역 근처 (인덱스 24)
+        targetPosition = 24;
+        trainIcon.className = 'train-img moving';
+        isTrainMoving = true;
+      } else if (nextArrival <= 25) {
+        // 25분 이하면 을지로4가역 근처 (인덱스 25)
+        targetPosition = 25;
+        trainIcon.className = 'train-img moving';
+        isTrainMoving = true;
+      } else if (nextArrival <= 30) {
+        // 30분 이하면 동대문운동장역 근처 (인덱스 26)
+        targetPosition = 26;
+        trainIcon.className = 'train-img moving';
+        isTrainMoving = true;
+      } else {
+        // 30분 초과면 더 먼 역들 (인덱스 27+)
+        targetPosition = Math.min(27 + Math.floor((nextArrival - 30) / 5), 48);
+        trainIcon.className = 'train-img moving';
+        isTrainMoving = true;
+      }
+
+      // 열차 위치 이동
+      if (targetPosition !== currentTrainPosition) {
+        moveTrainToStation(targetPosition);
+        currentTrainPosition = targetPosition;
+      }
+    }
+
+    // 열차를 특정 역으로 이동시키는 함수
+    function moveTrainToStation(stationIndex) {
+      // 기존 열차 아이콘 제거
+      const existingTrain = document.getElementById('train-icon');
+      if (existingTrain) {
+        existingTrain.remove();
+      }
+
+      // 새로운 위치에 열차 아이콘 추가
+      const targetStation = stationElements[stationIndex];
+      const newTrainIcon = document.createElement('img');
+      newTrainIcon.id = 'train-icon';
+      newTrainIcon.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDgiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCA0OCAzMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjQ4IiBoZWlnaHQ9IjMyIiByeD0iNiIgZmlsbD0idXJsKCN0cmFpbkdyYWQpIiBzdHJva2U9IiMzMzMiIHN0cm9rZS13aWR0aD0iMiIvPgo8cmVjdCB4PSI0IiB5PSIxMCIgd2lkdGg9IjQwIiBoZWlnaHQ9IjE0IiByeD0iMyIgZmlsbD0iIzMzMzMzMyIvPgo8cmVjdCB4PSI2IiB5PSIxMiIgd2lkdGg9IjM2IiBoZWlnaHQ9IjEwIiByeD0iMiIgZmlsbD0iIzQ0NDQ0NCIvPgo8cmVjdCB4PSI4IiB5PSIxNCIgd2lkdGg9IjMyIiBoZWlnaHQ9IjYiIHJ4PSIxIiBmaWxsPSIjNTU1NTU1Ii8+CjxyZWN0IHg9IjEwIiB5PSIxNiIgd2lkdGg9IjI4IiBoZWlnaHQ9IjIiIHJ4PSIxIiBmaWxsPSIjNjY2NjY2Ii8+CjxyZWN0IHg9IjEyIiB5PSIxOCIgd2lkdGg9IjI0IiBoZWlnaHQ9IjIiIHJ4PSIxIiBmaWxsPSIjNzc3Nzc3Ii8+CjxyZWN0IHg9IjE0IiB5PSIyMCIgd2lkdGg9IjIwIiBoZWlnaHQ9IjIiIHJ4PSIxIiBmaWxsPSIjODg4ODg4Ii8+CjxyZWN0IHg9IjE2IiB5PSIyMiIgd2lkdGg9IjE2IiBoZWlnaHQ9IjIiIHJ4PSIxIiBmaWxsPSIjOTk5OTk5Ii8+CjxyZWN0IHg9IjE4IiB5PSIyNCIgd2lkdGg9IjEyIiBoZWlnaHQ9IjIiIHJ4PSIxIiBmaWxsPSIjYWFhYWFhIi8+CjxyZWN0IHg9IjIwIiB5PSIyNiIgd2lkdGg9IjgiIGhlaWdodD0iMiIgcng9IjEiIGZpbGw9IiNiYmJiYmIiLz4KPGNpcmNsZSBjeD0iMTIiIGN5PSI4IiByPSIzIiBmaWxsPSIjMDBjMGZmIi8+CjxjaXJjbGUgY3g9IjIwIiBjeT0iOCIgcj0iMyIgZmlsbD0iIzAwYzBmZiIvPgo8Y2lyY2xlIGN4PSIyOCIgY3k9IjgiIHI9IjMiIGZpbGw9IiMwMGMwZmYiLz4KPGNpcmNsZSBjeD0iMzYiIGN5PSI4IiByPSIzIiBmaWxsPSIjMDBjMGZmIi8+CjxyZWN0IHg9IjEwIiB5PSI2IiB3aWR0aD0iMjgiIGhlaWdodD0iNCIgcng9IjIiIGZpbGw9IiMzMzMzMzMiLz4KPHJlY3QgeD0iMTIiIHk9IjgiIHdpZHRoPSIyNCIgaGVpZ2h0PSIyIiByeD0iMSIgZmlsbD0iIzQ0NDQ0NCIvPgo8cmVjdCB4PSIxNCIgeT0iMTAiIHdpZHRoPSIyMCIgaGVpZ2h0PSIyIiByeD0iMSIgZmlsbD0iIzU1NTU1NSIvPgo8cmVjdCB4PSIxNiIgeT0iMTIiIHdpZHRoPSIxNiIgaGVpZ2h0PSIyIiByeD0iMSIgZmlsbD0iIzY2NjY2NiIvPgo8cmVjdCB4PSIxOCIgeT0iMTQiIHdpZHRoPSIxMiIgaGVpZ2h0PSIyIiByeD0iMSIgZmlsbD0iIzc3Nzc3NyIvPgo8cmVjdCB4PSIyMCIgeT0iMTYiIHdpZHRoPSI4IiBoZWlnaHQ9IjIiIHJ4PSIxIiBmaWxsPSIjODg4ODg4Ii8+CjxyZWN0IHg9IjIyIiB5PSIxOCIgd2lkdGg9IjQiIGhlaWdodD0iMiIgcng9IjEiIGZpbGw9IiM5OTk5OTkiLz4KPHJlY3QgeD0iMjQiIHk9IjIwIiB3aWR0aD0iMiIgaGVpZ2h0PSIyIiByeD0iMSIgZmlsbD0iI2FhYWFhYSIvPgo8cmVjdCB4PSIyNiIgeT0iMjIiIHdpZHRoPSIyIiBoZWlnaHQ9IjIiIHJ4PSIxIiBmaWxsPSIjYmJiYmJiIi8+CjxyZWN0IHg9IjI4IiB5PSIyNCIgd2lkdGg9IjIiIGhlaWdodD0iMiIgcng9IjEiIGZpbGw9IiNjY2NjY2MiLz4KPHJlY3QgeD0iMzAiIHk9IjI2IiB3aWR0aD0iMiIgaGVpZ2h0PSIyIiByeD0iMSIgZmlsbD0iI2RkZGRkZCIvPgo8cmVjdCB4PSIzMiIgeT0iMjgiIHdpZHRoPSIyIiBoZWlnaHQ9IjIiIHJ4PSIxIiBmaWxsPSIjZWVlZWVlIi8+CjxyZWN0IHg9IjM0IiB5PSIzMCIgd2lkdGg9IjIiIGhlaWdodD0iMiIgcng9IjEiIGZpbGw9IiNmNWY1ZjUiLz4KPGRlZnM+CjxsaW5lYXJHcmFkaWVudCBpZD0idHJhaW5HcmFkIiB4MT0iMCUiIHkxPSIwJSIgeDI9IjEwMCUiIHkyPSIxMDAlIj4KPHN0b3Agb2Zmc2V0PSIwJSIgc3R5bGU9InN0b3AtY29sb3I6I2Y1ZjVmNTtzdG9wLW9wYWNpdHk6MSIgLz4KPHN0b3Agb2Zmc2V0PSIxMDAlIiBzdHlsZT0ic3RvcC1jb2xvcjojZTBlMGUwO3N0b3Atb3BhY2l0eToxIiAvPgo8L2xpbmVhckdyYWRpZW50Pgo8L2RlZnM+Cjwvc3ZnPg==';
+      newTrainIcon.alt = '지하철 열차';
+      newTrainIcon.className = 'train-img';
+      targetStation.insertBefore(newTrainIcon, targetStation.querySelector('span'));
+    }
+
+    // 열차 애니메이션 업데이트를 기존 업데이트 함수에 통합
+    const originalUpdateDisplay = updateDisplay;
+    updateDisplay = async function() {
+      await originalUpdateDisplay();
+      updateTrainPosition();
+    };
+
+    // 초기 열차 위치 설정
+    updateTrainPosition();
+
+    // 역 클릭 이벤트 처리
+    function handleStationClick(event) {
+      const stationElement = event.currentTarget;
+      const stationName = stationElement.getAttribute('data-station');
+      
+      if (allStationData[stationName]) {
+        // 현재 역 정보 업데이트
+        document.querySelector('.current-station').textContent = stationName + '역';
+        
+        // 운행 시간 체크
+        if (!isSubwayOperating()) {
+          // 운행 종료 시 메시지 표시
+          displayServiceEnded();
+        } else {
+          // 도착 정보 업데이트
+          const stationData = allStationData[stationName];
+          arrivalTimes = [...stationData.arrivals];
+          
+          // DOM 업데이트
+          document.getElementById('next-train-1').textContent = `${arrivalTimes[0]}분 후 도착`;
+          document.getElementById('next-train-2').textContent = `${arrivalTimes[1]}분 후 도착`;
+          document.getElementById('next-train-3').textContent = `${arrivalTimes[2]}분 후 도착`;
+          
+          // 스타일 초기화
+          document.querySelectorAll('.eta').forEach(element => {
+            element.style.color = '';
+            element.style.fontWeight = '';
+          });
+        }
+        
+        // 시각적 피드백
+        stationElement.style.backgroundColor = '#00c0ff';
+        stationElement.style.color = 'white';
+        stationElement.style.transform = 'scale(1.1)';
+        stationElement.style.transition = 'all 0.3s ease';
+        
+        // 다른 역들의 스타일 초기화
+        document.querySelectorAll('.station').forEach(station => {
+          if (station !== stationElement) {
+            station.style.backgroundColor = '';
+            station.style.color = '';
+            station.style.transform = '';
+          }
+        });
+        
+        // 열차 위치 업데이트
+        updateTrainPosition();
+        
+        console.log(`${stationName}역 클릭됨 - 운행시간: ${isSubwayOperating() ? '운행중' : '운행종료'}`);
+      }
+    }
+
+    // 모든 역에 클릭 이벤트 리스너 추가
+    document.querySelectorAll('.station').forEach(station => {
+      station.style.cursor = 'pointer';
+      station.addEventListener('click', handleStationClick);
+    });
+  </script>
+</body>
+</html>
